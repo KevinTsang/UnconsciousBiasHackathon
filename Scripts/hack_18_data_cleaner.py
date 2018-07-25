@@ -82,7 +82,7 @@ if __name__ == "__main__":
         vitals_rows = average_rows(vitals_reader, ["HeartRate (bpm)", "Respiration (Bpm)"])
         gaze_data = collapse_gaze_data(gaze_f.read().split("\n"))
 
-        jString = json.dumps(merge_rows(bp_rows, vitals_rows, gaze_data), indent="\t")
-        # result_f.write("export const mergedData : string = '")
+        jString = json.dumps(merge_rows(bp_rows, vitals_rows, gaze_data))
+        result_f.write("export const mergedData : string = '")
         result_f.write(jString)
-        # result_f.write("';")
+        result_f.write("';")
